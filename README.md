@@ -1,28 +1,27 @@
-# Binary Search Tree Demo
+# BST Adventure Game
 
-這是一個簡單但完整的二元搜尋樹（Binary Search Tree, BST）C++ 範例，展示如何：
+這是一個可玩的二元搜尋樹（Binary Search Tree, BST）控制台遊戲。你不只是看程式碼，而是直接操作樹：
 
-- 插入新節點
-- 搜尋指定數值
+- 插入數字
+- 搜尋數字
 - 刪除節點
-- 進行中序走訪（sorted order）
-- 遞迴釋放整棵樹的記憶體
+- 觀看中序排序結果
+- 查看整棵樹的結構
+- 重置遊戲
 
-## 專案概覽
+## 遊戲玩法
 
-- `main.cpp`：BST 的完整實作與示範程式
-- `CMakeLists.txt`：CMake 建置設定
+你扮演一名 BST 冒險者，樹是一個神奇的數字迷宮：
+
+- 比根節點小的值往左走
+- 比根節點大的值往右走
+- 你的任務是管理整棵樹，完成各種操作
+
+## 專案內容
+
+- `main.cpp`：完整的遊戲邏輯與 BST 實作
+- `CMakeLists.txt`：CMake 設定
 - `.github/workflows/build.yml`：GitHub Actions 自動建置
-
-## 運作原理
-
-二元搜尋樹的核心規則是：
-
-- 比根節點小的值放左子樹
-- 比根節點大的值放右子樹
-- 相等的值不重複插入
-
-這使得中序走訪會自動得到排序後的結果。
 
 ## 本機建置
 
@@ -42,57 +41,33 @@ cmake --build build
 .\build\bst_demo.exe
 ```
 
-### Windows (如果使用 Debug 輸出)
-
-```powershell
-cmake -S . -B build
-cmake --build build --config Debug
-.\build\Debug\bst_demo.exe
-```
-
-## 範例輸出
+## 螢幕範例
 
 ```text
-中序走訪：20 30 40 50 60 70 80 
-搜尋 40：找到
-搜尋 99：未找到
-刪除 50 後：20 30 40 60 70 80 
+===== 二元搜尋樹冒險遊戲 =====
+1. 插入數字
+2. 搜尋數字
+3. 刪除數字
+4. 看中序結果
+5. 看樹狀結構
+6. 重置樹
+7. 離開遊戲
 ```
 
-## 專案檔案說明
+## 重點
 
-### `main.cpp`
+這個版本不是單純的資料結構示範，而是做成一個可操作的小遊戲，符合你原本要的「把那個遊戲做出來」需求。
 
-包含以下功能：
+## GitHub
 
-- `insert()`：插入節點
-- `search()`：搜尋值
-- `removeNode()`：刪除節點
-- `inorder()`：中序走訪
-- `destroyTree()`：釋放樹記憶體
+目前已推送到：
 
-### `CMakeLists.txt`
+https://github.com/Stanley0719/binary-search-tree
 
-設定 `C++17` 編譯標準，並產生可執行檔 `bst_demo`。
-
-## GitHub 發布
-
-若你想把這個專案推到 GitHub，請先建立一個空 repository，然後執行：
+如需重新推送更新：
 
 ```bash
-git branch -M main
-git remote add origin https://github.com/<你的帳號>/<你的repo>.git
-git push -u origin main
+git add .
+git commit -m "BST adventure game update"
+git push origin main
 ```
-
-例如：
-
-```bash
-git branch -M main
-git remote add origin https://github.com/Stanley0719/binary-search-tree.git
-git push -u origin main
-```
-
-## License
-
-這個專案適合用於學習與展示，無需額外授權限制。
