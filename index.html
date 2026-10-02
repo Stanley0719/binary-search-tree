@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>二元搜尋樹種樹</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">GAME 11 · BINARY SEARCH TREE</p>
+          <h1>二元搜尋樹種樹</h1>
+        </div>
+        <div class="top-actions">
+          <button id="prevBtn">← 上一步</button>
+          <button id="nextBtn">下一步 →</button>
+          <button id="autoBtn">▶ 自動播放</button>
+          <button id="resetBtn">↺ 重來</button>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel tree-panel">
+          <div class="panel-toolbar">
+            <div class="mode-tabs">
+              <button class="mode-btn active" data-mode="insert">種樹</button>
+              <button class="mode-btn" data-mode="search">搜尋</button>
+              <button class="mode-btn" data-mode="delete">刪除</button>
+              <button class="mode-btn" data-mode="traversal">走訪</button>
+            </div>
+          </div>
+
+          <div class="controls-row">
+            <input id="customInput" value="50 30 70 20 40 60 80" aria-label="數字序列" />
+            <button id="applyCustomBtn">套用</button>
+          </div>
+
+          <div class="legend">
+            <span><i class="dot green"></i> 節點</span>
+            <span><i class="dot orange"></i> 掉落中的數字</span>
+            <span><i class="dot red"></i> 目前比較節點</span>
+          </div>
+
+          <svg id="treeSvg" viewBox="0 0 980 500" role="img" aria-label="二元搜尋樹視覺化"></svg>
+        </section>
+
+        <aside class="panel info-panel">
+          <div class="stat-grid">
+            <div class="stat-box">
+              <span>節點數</span>
+              <strong id="nodeCount">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>樹高</span>
+              <strong id="treeHeight">0</strong>
+            </div>
+            <div class="stat-box wide">
+              <span>中序走訪</span>
+              <strong id="inorderText">—</strong>
+            </div>
+          </div>
+
+          <div class="story-box">
+            <h2 id="stepTitle">空樹</h2>
+            <p id="stepMessage">空樹——連樹根都還沒有。每個節點會由 struct Node 定義：一個數字加左右兩個指標。</p>
+          </div>
+        </aside>
+      </main>
+
+      <section class="panel traversal-panel">
+        <div class="travel-header">
+          <h2>走訪這棵樹：前序・中序・後序・層序</h2>
+          <div class="traversal-tabs">
+            <button class="traversal-btn active" data-order="preorder">前序</button>
+            <button class="traversal-btn" data-order="inorder">中序</button>
+            <button class="traversal-btn" data-order="postorder">後序</button>
+            <button class="traversal-btn" data-order="levelorder">層序</button>
+          </div>
+        </div>
+
+        <div class="traversal-body">
+          <div id="traversalOutput" class="traversal-output">尚未產生走訪結果</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
